@@ -1,9 +1,20 @@
 import React from "react";
 import { PayPalMessages } from "@paypal/react-paypal-js";
 
-export const PayPalMessage = ({ amount, currency }) => {
+export const PayPalMessage = ({ amount }) => {
   const layout: "text" | "horizontal" = "text";
-  const style = { layout, currency };
+
+  const style = {
+    countryCode: "US",
+    amount: "88.44",
+    placement: "home",
+    layout,
+    textColor: "black",
+    textSize: "12",
+    textAlign: "left",
+    logoType: "primary",
+    logoPosition: "left",
+  };
 
   // price breakdown
 

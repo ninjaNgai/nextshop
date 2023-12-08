@@ -8,7 +8,7 @@ import { PayPalMessage } from "../PayPal/PayPalMessage";
 
 const product = {
   name: "4-Cup Pour Over Coffee Brewer with Stand",
-  price: "$192",
+  price: "88.44",
   href: "#",
   breadcrumbs: [
     { id: 1, name: "Home", href: "#" },
@@ -87,7 +87,7 @@ export default function ProductOverview() {
             </li>
           </ol>
         </nav>
-        <div className="container max-w-7xl">
+        <div className="container mx-auto">
           <div className="grid grid-cols-2">
             {/* Image gallery */}
             <div className="my-6">
@@ -106,11 +106,11 @@ export default function ProductOverview() {
                   </h1>
                   <h2 className="sr-only">Product information</h2>
                   <p className="text-3xl tracking-tight text-left text-gray-900">
-                    {product.price}
+                    ${product.price}
                   </p>
                   {/* PayPal Messaging */}
                   <div id="messaging-container" style={{ marginTop: ".75rem" }}>
-                    <PayPalMessage amount={product.price} currency={"USD"} />
+                    <PayPalMessage amount={product.price} />
                   </div>
 
                   {/* Reviews */}
