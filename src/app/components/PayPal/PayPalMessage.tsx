@@ -6,7 +6,6 @@ export const PayPalMessage = ({ amount }) => {
 
   const style = {
     countryCode: "US",
-    amount: "88.44",
     placement: "home",
     layout,
     textColor: "black",
