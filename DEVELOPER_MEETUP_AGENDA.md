@@ -13,7 +13,7 @@
    1. https://nextshop-ninjangai.vercel.app/
 2. Add Messaging
    1. Client id - https://www.paypal.com/signin
-   2. Add React JS Library - npm
+   2. Add PayPal React JS Library
    3. PayPalScriptProvider with `options`
    4. Messaging Component
    5. Params - amount, what we do in code, here’s how it corresponds to the Quantity in NextJS shop app
@@ -22,4 +22,4 @@
 
 1. Gamestop - Performance via Inspect/Timing tab
 2. Medium article
-3. Working with multiple CDN providers
+   1. https://medium.com/paypal-tech/caching-dynamic-content-at-the-edge-c25d28bf03e8

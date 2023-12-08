@@ -17,6 +17,12 @@ Client ID: `AS51PVUTmjqjizlEsX07M2YmlNJog-U53xUeOIUui0LTo8kw4eijbdTmA3H8wvyVKLox
 
 ## Add the react-paypal-js library
 
+To get started, install react-paypal-js with npm.
+
+```
+npm install @paypal/react-paypal-js
+```
+
 https://paypal.github.io/react-paypal-js/?path=/docs/getting-started--page
 
 ## Buttons and Messaging Integration
@@ -45,7 +51,33 @@ export default function RootLayout({ children }) {
 }
 ```
 
-2. Create a `PayPalButton.tsx` class
+2. Create a `PayPalMessage.tsx` class
+
+Note: For PayPal Messaging Best Practices, place the messaging underneath the price.
+
+```
+import React from "react";
+import { PayPalMessages } from "@paypal/react-paypal-js";
+
+export const PayPalMessage = ({ amount }) => {
+  const layout: "text" | "horizontal" = "text";
+
+  const style = {
+    countryCode: "US",
+    placement: "product",
+    layout,
+    textColor: "black",
+    textSize: "12",
+    textAlign: "left",
+    logoType: "primary",
+    logoPosition: "left",
+  };
+
+  return <PayPalMessages style={style} amount={amount} />;
+};
+```
+
+3. Create a `PayPalButton.tsx` class
 
 Note: For PayPal Button Best Practices, place the buttons below the Call to Action button.
 
@@ -114,34 +146,5 @@ export const PayPalButton = () => {
       onApprove={onApprove}
     />
   );
-};
-```
-
-3. Create a `PayPalMessage.tsx` class
-
-Note: For PayPal Messaging Best Practices, place the messaging underneath the price.
-
-```
-import React from "react";
-import { PayPalMessages } from "@paypal/react-paypal-js";
-
-export const PayPalMessage = ({ amount }) => {
-  const layout: "text" | "horizontal" = "text";
-
-  const style = {
-    countryCode: "US",
-    amount: "88.44",
-    placement: "home",
-    layout,
-    textColor: "black",
-    textSize: "12",
-    textAlign: "left",
-    logoType: "primary",
-    logoPosition: "left",
-  };
-
-  // price breakdown
-
-  return <PayPalMessages style={style} amount={amount} />;
 };
 ```
